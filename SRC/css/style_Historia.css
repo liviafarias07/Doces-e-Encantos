@@ -1,0 +1,770 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Sora:wght@100..800&display=swap');
+
+/* ============= ESTILOS GLOBAIS ============= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #ffffff;;
+color: #6e7843; 
+font-family: "Quicksand", "sans-serif";
+font-weight: 400;
+}
+
+/* ================================================= LOGO ================================ */
+.logonav {
+height: 70px;
+transition: 0.3s ease;
+}
+
+.logonav:hover {
+transform: scale(1.05);
+}
+
+
+/* =============================== NAVEGAÇÃO PRINCIPAL ======================================== */
+.navegacao {
+padding: 0.5rem;
+background-color: transarent;
+position: relative;
+display: flex;
+justify-content: center;
+border-radius: 15px;
+box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);
+gap: 10px;
+}
+
+.menu-links {
+padding: 20px 30px;
+}
+
+.link {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 70px;
+height: 50px;
+border-radius: 8px;
+position: relative;
+z-index: 1;
+overflow: hidden;
+transform-origin: center left;
+transition: width 0.2s ease-in;
+text-decoration: none;
+color: inherit;
+&:before {
+position: absolute;
+z-index: -1;
+content: "";
+display: block;
+border-radius: 8px;
+width: 100%;
+height: 100%;
+top: 0;
+transform: translateX(100%);
+transition: transform 0.2s ease-in;
+transform-origin: center right;
+background-color: #fffbf5;
+}
+
+&:hover,
+&:focus {
+outline: 0;
+width: 130px;
+
+&:before,
+.link-title {
+transform: translateX(0);
+opacity: 1;
+}
+}
+}
+
+.link:focus .link-title {
+transform: translateX(0);
+opacity: 1;
+}
+
+.link-icon {
+width: 28px;
+height: 28px;
+display: block;
+flex-shrink: 0;
+left: 18px;
+position: absolute;
+}
+.link-icon svg {
+width: 28px;
+height: 28px;
+}
+
+.link-title {
+transform: translateX(100%);
+transition: transform 0.2s ease-in;
+transform-origin: center right;
+display: block;
+text-align: center;
+text-indent: 28px;
+width: 100%;
+opacity: 0;
+}
+
+/* === SEÇÃO HISTÓRIA === */
+.historia-conteudo {
+max-width: 45%;
+text-align: left;
+margin-bottom: 50px;
+
+}
+
+.historia-conteudo h1 {
+font-size: 35px;
+color: #5f7a4d;
+font-family: "Poppins", sans-serif;
+ margin-left: -70px;
+ margin-bottom: 40px;
+
+
+}
+
+.historia-conteudo p {
+font-size: 21px;
+color: #5f7a4d;
+line-height: 1.6;
+
+ margin-left: -70px;
+
+}
+
+.historia-container {
+display: flex;
+flex-direction: row-reverse;
+align-items: flex-start;
+gap: 10px;
+padding: 40px 80px;
+opacity: 0;
+transform: translateY(50px);
+animation: subirHistoria 1.4s ease-out forwards;
+
+}
+
+.historia-imagem img {
+width: 500px;
+border-radius: 100px;
+object-fit: cover;
+display: block;
+
+ margin-left: -650px;
+
+}
+
+/* Keyframes da animação */
+@keyframes subirHistoria {
+0% {
+opacity: 0;
+transform: translateY(50px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* =============================== TEXTO ======================================== */
+.historia-conteudo h1,
+.historia-conteudo p,
+.historia-imagem img {
+opacity: 0;
+animation: subirHistoria 1s ease-out forwards;
+}
+
+.historia-conteudo h1 { animation-delay: 0.2s; }
+.historia-conteudo p:nth-of-type(1) { animation-delay: 0.4s; }
+.historia-conteudo p:nth-of-type(2) { animation-delay: 0.6s; }
+.historia-conteudo p:nth-of-type(3) { animation-delay: 0.8s; }
+.historia-conteudo p:nth-of-type(4) { animation-delay: 1s; }
+.historia-conteudo p:nth-of-type(5) { animation-delay: 1.2s; }
+.historia-imagem img { animation-delay: 1.4s; }
+
+
+
+/* ======================== RODAPÉ =================== */
+/* === SEÇÃO DE CONTATO === */
+.contato {
+  background: #5f7a4d;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.contato h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.contato form input {
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  background: white;
+  color: #0b3b24;
+}
+
+.contato input[type="submit"] {
+  background: white;
+  color: #5f7a4d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato input[type="submit"]:hover {
+  background: #e0e0e0;
+}
+
+
+
+.footer-modern {
+  background-color: #516b3f;  /* preto elegante */
+  color: #e0e0e0;
+  padding: 60px 10%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* GRID PRINCIPAL */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 40px;
+}
+
+/* COLUNAS */
+.footer-col h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #c0d6b7;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.footer-col i {
+  color: #ffd700;
+  margin-right: 6px;
+}
+
+/* BOTÕES */
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: -620px; /* ajusta o valor conforme quiser mover */
+}
+
+.footer-btn {
+  border: 0px solid #ccc;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.footer-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #85a76e;
+}
+
+/* CRÉDITOS */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ffffff;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Reset básico */
+
+/* Rodapé principal */
+.footer {
+  background-color: #5b704a; /* verde */
+  color: #fff;
+  width: 100vw; /* ocupa toda a largura da tela */
+  position: relative;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Container interno do footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; /* limita o conteúdo ao centro */
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* Colunas internas */
+.footer-col {
+  flex: 1 1 220px;
+  margin: 20px;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Ícones das redes sociais */
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #85a76e;
+}
+/* Mantém os títulos no lugar, sem mexer na posição */
+.footer-col h3 {
+  text-align: left; /* alinha o título à esquerda dentro da coluna */
+  margin-bottom: 15px; /* espaçamento abaixo do título */
+}
+
+/* Alinha os itens da lista à esquerda, sem alterar a posição da coluna */
+.footer-col ul {
+  list-style: none;      /* remove bullets padrões */
+  padding-left: 0;       /* remove recuo da lista */
+  margin: 0;             /* remove margem extra */
+}
+
+.footer-col ul li {
+  text-align: left;      /* força o alinhamento do texto à esquerda */
+  margin-bottom: 8px;    /* espaçamento entre os itens */
+}
+
+/* Coluna Rápidos */
+.footer-col:first-child h3 {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.footer-col:first-child ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-col:first-child ul li {
+  text-align: left;
+  margin-bottom: 8px;
+
+}
+
+/* Coluna Contato específica */
+.contato-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 220px;            /* largura da coluna */
+  gap: 4px;                    /* espaçamento entre título e textos */
+  color: #fff;  
+}
+
+.contato-col h3 {
+  margin-bottom: 8px;          /* espaço do título */
+  color: #fff;  
+}
+
+.contato-col p {
+  margin: 0;                   /* remove margens extras */
+  line-height: 1.5;
+  color: #fff;  
+}
+
+/* Horários com quebra de linha */
+.contato-col p br {
+  line-height: 1.2;
+}
+
+/* Footer buttons */
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.footer-btn {
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Footer bottom / créditos */
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #000000;
+}
+
+
+/* Coluna Localização específica */
+.localizacao-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* alinha título e textos à esquerda */
+  max-width: 250px;         /* largura da coluna */
+  gap: 4px;                 /* espaçamento entre título e textos */
+  margin-left: 10px;        /* distância em relação à coluna Contato */
+  color: #fff;              /* todo texto branco */
+}
+
+.localizacao-col h3 {
+  margin-bottom: 8px;       /* espaço abaixo do título */
+  color: #fff;              /* título branco */
+  text-align: left;         /* força alinhamento à esquerda */
+}
+
+.localizacao-col p {
+  margin: 0;                /* remove margens extras */
+  line-height: 1.5;         /* espaçamento entre linhas */
+  color: #fff;              /* textos brancos */
+}
+
+/* Quebra de linha caso precise */
+.localizacao-col p br {
+  line-height: 1.2;
+}
+/* Coluna Contato específica *********************************/
+/* Versão confiável para aproximar a coluna Contato */
+.contato-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 220px;
+  gap: 4px;
+  position: relative;          /* mantemos relative pra poder usar z-index/transform */
+  transform: translateX(-390px);/* puxe para a esquerda: ajuste esse valor (-150px, -220px...) */
+  z-index: 2;                  /* garante que o texto fique visível sobre outros elementos */
+  color: #fff;
+  transition: transform 0.12s;  /* opcional: movimento mais suave ao editar */
+}
+
+/* mantém o restante igual — só para segurança */
+.contato-col h3 { margin-bottom: 8px; color: #fff; }
+.contato-col p  { margin: 0; line-height: 1.5; color: #fff; }
+
+
+/* Coluna Localização específica ***********************************************************/
+/* ajuste opcional caso haja sobreposição */
+.localizacao-col {
+  /* ...seu css já existente... */
+  transform: translateX(-500px); /* empurra localizacao um pouco à direita (ajuste o valor) */
+  z-index: 1;
+}
+
+/*formulario ****************************************************************/
+/* Coluna do formulário de contato */
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #5f7a4d; /* verde escuro parecido com o exemplo */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 260px;
+  width: 100%;
+  color: #fff;
+  gap: 10px;
+  margin-left: 40px; /* afasta um pouco da coluna Localização */
+}
+
+/* Título */
+.contato-form h3 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Campos */
+.contato-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.contato-form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Botão */
+.contato-form button {
+  background-color: #b5c9a769; /* amarelo igual ao botão “enviar” da imagem */
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contato-form button:hover {
+  background-color: #85a76e;
+  transform: scale(1.03);
+}
+
+
+/* Botão de reservas *****************************************/
+.footer-btn {
+  display: inline-block;
+  background: #b5c9a769;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.footer-btn {
+  border: 0px solid #ccc;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease; /* adiciona suavidade */
+  font-weight: 500;
+  transform: scale(1); /* define o tamanho base */
+}
+
+.footer-btn:hover {
+  background-color: #fcfcfc;
+  color: #ffffff;
+  border-color: #85a76e;
+  transform: scale(1.1); /* aumenta levemente o botão */
+}
+
+
+.footer-btn:hover {
+  background: #85a76e;
+}
+
+/* Formulário de contato */
+.footer-form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer-form button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #ffffff;
+  color: #a6daa6;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-form button:hover {
+  background: #a6daa6;
+}
+
+.contato-form {
+  margin-top: -300px; /* sobe o bloco */
+  max-width: 800px;  /* deixa mais estreito */
+  margin-left: 800px;
+}
+
+
+.footer-bottom p {
+
+color: #ffffff;
+margin-left: -800px;
+}
+
+
+/* Créditos inferiores */
+.footer-creditos {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  background-color: #ffffff; /* mantém o mesmo verde */
+}
+
+/* Container principal – cria colunas */
+.quem-somos-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;
+  padding: 30px 20px;
+  text-align: left;
+}
+.quem-somos-section .card p {
+  color: white;
+  text-align: left;
+}
+
+/* Estilo dos quadrados */
+.card {
+  background-color: #85a76e; /* verde pastel */
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* --------- GARANTIR: NENHUM LINK FICA SUBLINHADO ----------- */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+
+/*Arthur*/
+/* ======================== BOTÃO FLUTUANTE (VOLTAR ao inicio) =================== */
+.Btn {
+border: none;
+border-radius: 50%;
+width: 45px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition-duration: 0.4s;
+cursor: pointer;
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #85a76e;
+overflow: hidden;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.svgIcon {
+transition-duration: 0.3s;
+}
+
+.svgIcon path {
+fill: white;
+}
+
+.text {
+position: absolute;
+color: white;
+width: 100px;
+font-weight: 600;
+opacity: 0;
+transition-duration: 0.4s;
+}
+
+.Btn:hover {
+width: 110px;
+border-radius: 30px;
+}
+
+.Btn:hover .text {
+opacity: 1;
+}
+
+.Btn:hover .svgIcon {
+opacity: 0;
+}

@@ -1,0 +1,151 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=Sora:wght@100..800&display=swap');
+
+/* ============= ESTILOS GLOBAIS ============= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #ffffff;;
+color: #6e7843;  /* CORES DOS ICONES DO MENU ("home" "contatos" etc..) */
+font-family: "Quicksand", "sans-serif";
+font-weight: 400;
+}
+
+/* ================================================= LOGO ================================ */
+.logonav {
+height: 70px;
+transition: 0.3s ease;
+}
+
+.logonav:hover {
+transform: scale(1.05);
+}
+
+/* =============================== NAVEGAÇÃO PRINCIPAL ======================================== */
+.navegacao {
+padding: 0.5rem;
+background-color: transarent;
+position: relative;
+display: flex;
+justify-content: center;
+border-radius: 15px;
+box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.05);
+gap: 10px;
+}
+
+.menu-links {
+padding: 20px 30px;
+}
+
+.link {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 70px;
+height: 50px;
+border-radius: 8px;
+position: relative;
+z-index: 1;
+overflow: hidden;
+transform-origin: center left;
+transition: width 0.2s ease-in;
+text-decoration: none;
+color: inherit;
+&:before {
+position: absolute;
+z-index: -1;
+content: "";
+display: block;
+border-radius: 8px;
+width: 100%;
+height: 100%;
+top: 0;
+transform: translateX(100%);
+transition: transform 0.2s ease-in;
+transform-origin: center right;
+background-color: #fffbf5;
+}
+
+&:hover,
+&:focus {
+outline: 0;
+width: 130px;
+
+&:before,
+.link-title {
+transform: translateX(0);
+opacity: 1;
+}
+}
+}
+
+.link:focus .link-title {
+transform: translateX(0);
+opacity: 1;
+}
+
+.link-icon {
+width: 28px;
+height: 28px;
+display: block;
+flex-shrink: 0;
+left: 18px;
+position: absolute;
+}
+.link-icon svg {
+width: 28px;
+height: 28px;
+}
+
+.link-title {
+transform: translateX(100%);
+transition: transform 0.2s ease-in;
+transform-origin: center right;
+display: block;
+text-align: center;
+text-indent: 28px;
+width: 100%;
+opacity: 0;
+}
+
+
+/* =============================== CONTEUDO ======================================== */
+.center-wrapper {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  animation: infiniteScroll 20s linear infinite;
+}
+
+/* Cada imagem ocupa exatamente a altura do container */
+.carousel img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* ANIMAÇÃO REALMENTE INFINITA */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    /* mover o equivalente ao total das imagens originais */
+    transform: translateY(-3000px); 
+  }
+}
+
